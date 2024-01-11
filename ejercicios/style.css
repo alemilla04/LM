@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    /* flex-direction: column; */
+    justify-content: space-around;
+}
+
+table, thead, tbody, th, tr, td {
+    border-collapse: collapse;
+}
+
+.encabezado {
+    background-color: #C9D6E6;
+}
+
+.imagen {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+thead>tr>.nombre {
+    font-size: 30px;
+    align-self: flex-end;
+}
+
+thead>tr>th>p {
+    font-size: 15px;
+}
