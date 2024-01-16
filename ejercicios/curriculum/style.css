@@ -162,12 +162,16 @@ th::before {
     padding: 0px 0px 30px 0px;
 }
 
+.td-tec-superior {
+    position: relative;
+}
+
 .td-tec-superior::before {
     content: "";
     background-color: var(--color-letra);
     width: 370px;
     height: 4px;
-    top: 38rem;
-    left: 29.5rem;
+    top: 15rem;
+    left: 1px;
     position: absolute;
 }
