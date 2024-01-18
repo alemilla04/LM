@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE listaventas [
+                <!ELEMENT listaventas (venta+)>
+                <!ELEMENT venta (importe, comprador, vendedor, fecha?, codigo_factura)>
+                <!ELEMENT importe (#PCDATA)>
+                <!ELEMENT comprador (empresa | persona)>
+                <!ELEMENT vendedor ((cif | nif), nombre)>
+
+                <!ELEMENT empresa (cif, nombre)>
+                <!ELEMENT persona (nif, nombre)>
+                <!ELEMENT fecha (#PCDATA)>
+                <!ELEMENT codigo_factura (#PCDATA)>
+                <!ELEMENT cif (#PCDATA)>
+                <!ELEMENT nif (#PCDATA)>
+                <!ELEMENT nombre (#PCDATA)>
+        ]>
+<listaventas>
+    <venta>
+        <importe>21</importe>
+        <comprador>
+            <persona>
+                <nif>12345678X</nif>
+                <nombre>Empresa SL</nombre>
+            </persona>
+        </comprador>
+        <vendedor>
+            <empresa>
+                <cif>63462324</cif>
+                <nombre>Minegocio SL</nombre>
+            </empresa>
+        </vendedor>
+        <fecha>12/12/2023</fecha>
+        <codigo_factura>17265</codigo_factura>
+    </venta>
+</listaventas>
