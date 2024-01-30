@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE afiliados [
+  <!ELEMENT afiliados (afiliado+)>
+  <!ELEMENT afiliado ((DNI | NIE), nombre, apellidos, situacion_laboral, fecha_nacimiento, listado_bajas?, listado_prestaciones_cobradas?)>
+  <!ELEMENT DNI (#PCDATA)>
+  <!ELEMENT NIE (#PCDATA)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT apellidos (#PCDATA)>
+  <!ELEMENT situacion_laboral ((en_paro | en_activo | jubilado | edad_no_laboral))>
+  <!ELEMENT en_paro EMPTY>  
+  <!ELEMENT en_activo EMPTY>  
+  <!ELEMENT jubilado EMPTY>  
+  <!ELEMENT edad_no_laboral EMPTY>  
+  <!ELEMENT fecha_nacimiento (dia, mes, anio)>
+  <!ELEMENT dia (#PCDATA)>  
+  <!ELEMENT mes (#PCDATA)>  
+  <!ELEMENT anio (#PCDATA)>  
+  <!ELEMENT listado_bajas (baja*)>
+  <!ELEMENT baja (causa, fecha_inicio, fecha_final?)>
+  <!ELEMENT causa (#PCDATA)>
+  <!ELEMENT listado_prestaciones_cobradas (prestacion*)>
+  <!ELEMENT prestacion (cantidad, fecha_inicio, fecha_final?)>
+  <!ELEMENT cantidad (#PCDATA)>
+  <!ELEMENT fecha_inicio (dia, mes, anio)>
+  <!ELEMENT fecha_final (dia, mes, anio)>
+]>
+
+<afiliados>
+    <afiliado>
+        <DNI>12345678A</DNI>
+        <nombre>Padri Martin</nombre>
+        <apellidos>Carillo</apellidos>
+        <situacion_laboral>
+            <en_paro />
+        </situacion_laboral>
+        <fecha_nacimiento>
+            <dia>11</dia>
+            <mes>02</mes>
+            <anio>1980</anio>
+        </fecha_nacimiento>
+        <listado_bajas>
+            <baja>
+                <causa>apendicitis</causa>
+                <fecha_inicio>
+                    <dia>01</dia>
+                    <mes>01</mes>
+                    <anio>2010</anio>
+                </fecha_inicio>
+            </baja>
+            <baja>
+                <causa>accidente de coche</causa>
+                <fecha_inicio>
+                    <dia>01</dia>
+                    <mes>07</mes>
+                    <anio>2020</anio>
+                </fecha_inicio>
+                <fecha_final>
+                    <dia>30</dia>
+                    <mes>10</mes>
+                    <anio>2020</anio>
+                </fecha_final>
+            </baja>
+        </listado_bajas>
+        <listado_prestaciones_cobradas>
+            <prestacion>
+                <cantidad>1000€</cantidad>
+                <fecha_inicio>
+                    <dia>01</dia>
+                    <mes>01</mes>
+                    <anio>2010</anio>
+                </fecha_inicio>
+                <fecha_final>
+                    <dia>01</dia>
+                    <mes>02</mes>
+                    <anio>2010</anio>
+                </fecha_final>
+            </prestacion>
+        </listado_prestaciones_cobradas>
+    </afiliado>
+
+    <afiliado>
+        <DNI>12345678b</DNI>
+        <nombre>Maria</nombre>
+        <apellidos>Bravo Perez</apellidos>
+        <situacion_laboral>
+            <en_activo/>
+        </situacion_laboral>
+        <fecha_nacimiento>
+            <dia>15</dia>
+            <mes>12</mes>
+            <anio>1979</anio>
+        </fecha_nacimiento>
+        <listado_bajas/>
+        <listado_prestaciones_cobradas/>
+    </afiliado>
+</afiliados>

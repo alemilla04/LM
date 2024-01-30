@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE operaciones [
+  <!ELEMENT operaciones (operacion+)>
+  <!ELEMENT operacion ((venta | compra), nombre, apellidos, situacion_laboral, fecha_nacimiento, listado_bajas?, listado_prestaciones_cobradas?)>
+  <!ELEMENT DNI (#PCDATA)>
+  <!ELEMENT NIE (#PCDATA)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT apellidos (#PCDATA)>
+  <!ELEMENT situacion_laboral ((en_paro | en_activo | jubilado | edad_no_laboral))>
+  <!ELEMENT en_paro EMPTY>  
+  <!ELEMENT en_activo EMPTY>  
+  <!ELEMENT jubilado EMPTY>  
+  <!ELEMENT edad_no_laboral EMPTY>  
+  <!ELEMENT fecha_nacimiento (dia, mes, anio)>
+  <!ELEMENT dia (#PCDATA)>  
+  <!ELEMENT mes (#PCDATA)>  
+  <!ELEMENT anio (#PCDATA)>  
+  <!ELEMENT listado_bajas (baja*)>
+  <!ELEMENT baja (causa, fecha_inicio, fecha_final?)>
+  <!ELEMENT causa (#PCDATA)>
+  <!ELEMENT listado_prestaciones_cobradas (prestacion*)>
+  <!ELEMENT prestacion (cantidad, fecha_inicio, fecha_final?)>
+  <!ELEMENT cantidad (#PCDATA)>
+  <!ELEMENT fecha_inicio (dia, mes, anio)>
+  <!ELEMENT fecha_final (dia, mes, anio)>
+]>
+
+<operaciones>
+    <operacion>
+        <venta>
+            <titulosvendidos>
+                <titulo>Don Quijote</titulo>
+                <titulo>Rimas y leyendas</titulo>
+                <cantidadtotal>2000</cantidadtotal>
+                <importe moneda="euros">4400</importe>
+            </titulosvendidos>
+        </venta>
+        <venta>
+            <titulosvendidos>
+                <titulo>Rinconete y Cortadillo</titulo>
+                <titulo>Sainetes</titulo>
+                <cantidadtotal>1000</cantidadtotal>
+                <entregado/>
+                <importe moneda="libras">290</importe>
+            </titulosvendidos>
+        </venta>
+    </operacion>
+    <operacion>
+        <compra>
+            <tituloscomprados>
+                <titulo>De la Tierra a la Luna</titulo>
+                <titulo>Barbarroja</titulo>
+                <proveedor>Editorial EDSA</proveedor>
+                <fechacompra>
+                    <dia>10</dia>
+                    <mes>6</mes>
+                    <anio>2018</anio>
+                </fechacompra>
+            </tituloscomprados>
+        </compra>
+        <venta>
+            <titulosvendidos>
+                <titulo>Cinco semanas en globo</titulo>
+                <titulo>Sainetes</titulo>
+                <cantidadtotal>700</cantidadtotal>
+                <entregado/>
+                <importe moneda="euros">1490</importe>
+            </titulosvendidos>
+        </venta>
+        <compra>
+            <tituloscomprados>
+                <titulo>De la Tierra a la Luna</titulo>
+                <titulo>Barbarroja</titulo>
+                <proveedor>Editorial Recopila</proveedor>
+                <fechacompra>
+                    <dia>2</dia>
+                    <mes>12</mes>
+                    <anio>2017</anio>
+                </fechacompra>
+            </tituloscomprados>
+        </compra>
+    </operacion>
+</operaciones>
